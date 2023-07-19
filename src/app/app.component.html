@@ -1,0 +1,27 @@
+<h1>Character List</h1> <!-- Título para la lista de personajes -->
+
+<button (click)="searchCharacters()">Mostrar personajes de Rick and Morty</button>
+<!-- Botón para llamar al método searchCharacters() -->
+
+<button (click)="searchEpisodes()">Mostrar episodios de Rick and Morty</button>
+<!-- Botón para llamar al método searchEpisodes() -->
+
+<div *ngIf="characters.length > 0">
+  <h2>Personajes:</h2>
+  <div *ngFor="let character of characters">
+    <h3>{{ character.name }}</h3> <!-- Mostrar el nombre del personaje obtenido de Rick and Morty -->
+    <img [src]="character.image" alt="Character Image"> <!-- Mostrar la imagen del personaje obtenido de Rick and Morty -->
+    <p>Status: {{ character.status }}</p> <!-- Mostrar el estado del personaje obtenido de Rick and Morty -->
+    <p>Species: {{ character.species }}</p> <!-- Mostrar la especie del personaje obtenido de Rick and Morty -->
+    <p>Gender: {{ character.gender }}</p> <!-- Mostrar el género del personaje obtenido de Rick and Morty -->
+  </div>
+</div>
+
+<div *ngIf="episodes.length > 0">
+  <h2>Episodios:</h2>
+  <div *ngFor="let episode of episodes">
+    <h3>{{ episode.name }}</h3> <!-- Mostrar el nombre del episodio obtenido de Rick and Morty -->
+    <p>Fecha de emisión: {{ episode.air_date }}</p> <!-- Mostrar la fecha de emisión del episodio obtenido de Rick and Morty -->
+    <p>Episodio: {{ episode.episode }}</p> <!-- Mostrar el número de episodio obtenido de Rick and Morty -->
+  </div>
+</div>
